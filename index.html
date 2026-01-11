@@ -79,21 +79,17 @@
                     <div class="relative">
                         <input
                             type="text"
-                            placeholder="搜索交易所名称、别名或标签..."
+                            data-i18n="searchPlaceholder"
+                            placeholder="Search exchange name, alias or tags..."
                             class="w-full pl-10 pr-4 py-2 glass rounded-xl border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-400/50"
                         />
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="javascript:void(0)" onclick="showRankings()" class="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">
-                        Exchanges
-                    </a>
-                    <button class="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">
-                        Method
-                    </button>
-                    <button class="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">
-                        About
-                    </button>
+                    <a href="javascript:void(0)" onclick="showRankings()" data-i18n="exchanges" class="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Exchanges</a>
+                    <button data-i18n="method" class="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Method</button>
+                    <button data-i18n="about" class="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">About</button>
+                    <button id="langToggleBtn" onclick="switchLanguage(currentLang === 'en' ? 'zh' : 'en')" class="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all border border-white/20">中文</button>
                 </div>
             </div>
         </div>
@@ -106,23 +102,23 @@
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <!-- Hero Section -->
                 <div class="text-center mb-16">
-                    <h1 class="text-5xl font-bold text-white mb-6">
-                        Web3 实体排名，从规模转向可验证的风险与质量
+                    <h1 class="text-5xl font-bold text-white mb-6" data-i18n="heroTitle">
+                        Web3 Entity Rankings: From Scale to Verifiable Risk & Quality
                     </h1>
-                    <p class="text-xl text-white/70 mb-8">
-                        Proof（可验证） / Ledger（可追溯） / Signals（可预警）
+                    <p class="text-xl text-white/70 mb-8" data-i18n="heroSubtitle">
+                        Proof (Verifiable) / Ledger (Traceable) / Signals (Alert)
                     </p>
-                    <button onclick="showRankings()" class="inline-flex items-center px-8 py-4 btn-web3 text-white rounded-xl font-semibold neon-glow-hover">
-                        查看交易所榜单
+                    <button onclick="showRankings()" data-i18n="viewRankings" class="inline-flex items-center px-8 py-4 btn-web3 text-white rounded-xl font-semibold neon-glow-hover">
+                        View Exchange Rankings
                         <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </button>
                 </div>
 
-                <!-- 今日风险速览 -->
+                <!-- Today's Risk Overview -->
                 <div class="glass-strong rounded-2xl p-8 mb-8 neon-glow">
-                    <h2 class="text-2xl font-semibold text-white mb-6">今日风险速览</h2>
+                    <h2 class="text-2xl font-semibold text-white mb-6" data-i18n="todayRisk">Today's Risk Overview</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="glass rounded-xl p-6 border border-white/10 hover:border-red-400/50 transition-all neon-glow-hover">
                             <div class="flex items-start space-x-4">
@@ -132,7 +128,7 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <p class="text-sm text-white/60">活跃风险事件</p>
+                                    <p class="text-sm text-white/60" data-i18n="activeEvents">Active Risk Events</p>
                                     <p class="text-3xl font-bold text-white">12</p>
                                 </div>
                             </div>
@@ -145,7 +141,7 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <p class="text-sm text-white/60">待验证交易所</p>
+                                    <p class="text-sm text-white/60" data-i18n="pendingVerification">Exchanges Pending Verification</p>
                                     <p class="text-3xl font-bold text-white">8</p>
                                 </div>
                             </div>
@@ -158,7 +154,7 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <p class="text-sm text-white/60">已验证 Proof</p>
+                                    <p class="text-sm text-white/60" data-i18n="verifiedProof">Verified Proof</p>
                                     <p class="text-3xl font-bold text-white">156</p>
                                 </div>
                             </div>
@@ -166,7 +162,7 @@
                     </div>
                 </div>
 
-                <!-- 核心功能说明 -->
+                <!-- Core Features -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="glass rounded-xl p-6 border border-white/10 hover:border-blue-400/50 transition-all neon-glow-hover group">
                         <div class="p-3 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl border border-blue-400/30 w-fit mb-4 group-hover:scale-110 transition-transform">
@@ -174,9 +170,9 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-lg font-semibold text-white mb-2">Proof（可验证）</h3>
-                        <p class="text-white/70">
-                            每项证据都有来源、快照日期和可信度等级，确保信息可追溯、可验证。
+                        <h3 class="text-lg font-semibold text-white mb-2" data-i18n="proofTitle">Proof (Verifiable)</h3>
+                        <p class="text-white/70" data-i18n="proofDesc">
+                            Every piece of evidence has source, snapshot date, and credibility level, ensuring traceable and verifiable information.
                         </p>
                     </div>
                     <div class="glass rounded-xl p-6 border border-white/10 hover:border-purple-400/50 transition-all neon-glow-hover group">
@@ -185,9 +181,9 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                             </svg>
                         </div>
-                        <h3 class="text-lg font-semibold text-white mb-2">Ledger（风险账本）</h3>
-                        <p class="text-white/70">
-                            完整记录所有风险事件，按严重程度分类，支持时间线追溯和证据链接。
+                        <h3 class="text-lg font-semibold text-white mb-2" data-i18n="ledgerTitle">Ledger (Risk Ledger)</h3>
+                        <p class="text-white/70" data-i18n="ledgerDesc">
+                            Complete record of all risk events, categorized by severity, supporting timeline traceability and evidence links.
                         </p>
                     </div>
                     <div class="glass rounded-xl p-6 border border-white/10 hover:border-orange-400/50 transition-all neon-glow-hover group">
@@ -196,9 +192,9 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                             </svg>
                         </div>
-                        <h3 class="text-lg font-semibold text-white mb-2">Signals（风险预警）</h3>
-                        <p class="text-white/70">
-                            基于30天风险曲线，识别异常趋势和潜在风险信号，提前预警。
+                        <h3 class="text-lg font-semibold text-white mb-2" data-i18n="signalsTitle">Signals (Risk Alerts)</h3>
+                        <p class="text-white/70" data-i18n="signalsDesc">
+                            Based on 30-day risk curves, identifying abnormal trends and potential risk signals for early warning.
                         </p>
                     </div>
                 </div>
@@ -429,6 +425,208 @@
 
     <!-- JavaScript -->
     <script>
+        // Language data
+        let currentLang = 'en';
+        const translations = {
+            en: {
+                // Navigation
+                searchPlaceholder: "Search exchange name, alias or tags...",
+                exchanges: "Exchanges",
+                method: "Method",
+                about: "About",
+                langToggle: "中文",
+                
+                // Home page
+                heroTitle: "Web3 Entity Rankings: From Scale to Verifiable Risk & Quality",
+                heroSubtitle: "Proof (Verifiable) / Ledger (Traceable) / Signals (Alert)",
+                viewRankings: "View Exchange Rankings",
+                todayRisk: "Today's Risk Overview",
+                activeEvents: "Active Risk Events",
+                pendingVerification: "Exchanges Pending Verification",
+                verifiedProof: "Verified Proof",
+                proofTitle: "Proof (Verifiable)",
+                proofDesc: "Every piece of evidence has source, snapshot date, and credibility level, ensuring traceable and verifiable information.",
+                ledgerTitle: "Ledger (Risk Ledger)",
+                ledgerDesc: "Complete record of all risk events, categorized by severity, supporting timeline traceability and evidence links.",
+                signalsTitle: "Signals (Risk Alerts)",
+                signalsDesc: "Based on 30-day risk curves, identifying abnormal trends and potential risk signals for early warning.",
+                
+                // Rankings page
+                rankingsTitle: "Exchange Rankings (Risk-first Quality Rank)",
+                rankingsSubtitle: "Not about who's biggest, but who's more transparent, stable, and verifiable.",
+                rank: "Rank",
+                exchange: "Exchange",
+                totalScore: "Total Score",
+                riskTemp: "Risk Temp",
+                proof: "Proof",
+                events90d: "90d Events",
+                liquidity: "Liquidity",
+                volume24h: "24H Volume",
+                action: "Action",
+                view: "View",
+                backToRankings: "Back to Rankings",
+                
+                // Detail page
+                overview: "Overview",
+                ledger: "Ledger",
+                signals: "Signals",
+                method: "Method",
+                conclusion: "Conclusion",
+                volume24hLabel: "24H Volume",
+                liquidityScoreLabel: "Liquidity Score",
+                exchangeType: "Exchange Type",
+                strengths: "Strengths",
+                concerns: "Concerns",
+                snapshotDate: "Snapshot Date",
+                source: "Source",
+                credibility: "Credibility",
+                viewEvidence: "View Evidence",
+                noProofRecords: "No Proof records",
+                noRiskEvents: "No risk event records",
+                to: "to",
+                ongoing: "Ongoing",
+                evidenceLinks: "Evidence Links",
+                riskSignals30d: "Risk Signals (30-day trend)",
+                riskSignalsDesc: "Based on 30-day risk score data, identifying abnormal trends and potential risk signals.",
+                currentRiskTemp: "Current Risk Temperature",
+                events90dCount: "Events in last 90 days",
+                scoringFormula: "Scoring Formula",
+                formulaDesc: "Total Score = Base Quality × (1 - Risk Penalty) + Proof Bonus",
+                baseQuality: "Base Quality",
+                baseQualityDesc: "Evaluates exchange's base quality, including liquidity, trading structure, stability, and scale proxy factors.",
+                riskPenalty: "Risk Penalty",
+                riskPenaltyDesc: "Calculated based on Ledger severity and time decay, plus Signals upward trends.",
+                proofBonus: "Proof Bonus",
+                proofBonusDesc: "Awarded based on PoR status, audit situation, and transparency maintenance.",
+                totalScoreLabel: "Total Score",
+                riskLevelLow: "Low",
+                riskLevelMed: "Medium",
+                riskLevelHigh: "High",
+                verified: "Verified",
+                porStatus: "PoR Status",
+                events90dLabel: "90d Events",
+                jurisdictions: "Jurisdictions"
+            },
+            zh: {
+                // Navigation
+                searchPlaceholder: "搜索交易所名称、别名或标签...",
+                exchanges: "交易所",
+                method: "方法论",
+                about: "关于",
+                langToggle: "English",
+                
+                // Home page
+                heroTitle: "Web3 实体排名，从规模转向可验证的风险与质量",
+                heroSubtitle: "Proof（可验证） / Ledger（可追溯） / Signals（可预警）",
+                viewRankings: "查看交易所榜单",
+                todayRisk: "今日风险速览",
+                activeEvents: "活跃风险事件",
+                pendingVerification: "待验证交易所",
+                verifiedProof: "已验证 Proof",
+                proofTitle: "Proof（可验证）",
+                proofDesc: "每项证据都有来源、快照日期和可信度等级，确保信息可追溯、可验证。",
+                ledgerTitle: "Ledger（风险账本）",
+                ledgerDesc: "完整记录所有风险事件，按严重程度分类，支持时间线追溯和证据链接。",
+                signalsTitle: "Signals（风险预警）",
+                signalsDesc: "基于30天风险曲线，识别异常趋势和潜在风险信号，提前预警。",
+                
+                // Rankings page
+                rankingsTitle: "交易所综合榜（Risk-first Quality Rank）",
+                rankingsSubtitle: "不是谁最大，而是谁更透明、更稳、更可验证。",
+                rank: "排名",
+                exchange: "交易所",
+                totalScore: "总分",
+                riskTemp: "风险温度",
+                proof: "Proof",
+                events90d: "90天事件",
+                liquidity: "流动性",
+                volume24h: "24H成交量",
+                action: "操作",
+                view: "查看",
+                backToRankings: "返回榜单",
+                
+                // Detail page
+                overview: "概览",
+                ledger: "Ledger",
+                signals: "Signals",
+                method: "方法论",
+                conclusion: "结论",
+                volume24hLabel: "24小时成交量",
+                liquidityScoreLabel: "流动性评分",
+                exchangeType: "交易所类型",
+                strengths: "优势",
+                concerns: "关注点",
+                snapshotDate: "快照日期",
+                source: "来源",
+                credibility: "可信度",
+                viewEvidence: "查看证据",
+                noProofRecords: "暂无Proof记录",
+                noRiskEvents: "暂无风险事件记录",
+                to: "至",
+                ongoing: "进行中",
+                evidenceLinks: "证据链接",
+                riskSignals30d: "风险信号（30天趋势）",
+                riskSignalsDesc: "基于30天的风险评分数据，识别异常趋势和潜在风险信号。",
+                currentRiskTemp: "当前风险温度",
+                events90dCount: "近90天事件数",
+                scoringFormula: "评分公式",
+                formulaDesc: "Total Score = Base Quality × (1 - Risk Penalty) + Proof Bonus",
+                baseQuality: "Base Quality（基础质量）",
+                baseQualityDesc: "评估交易所的基础质量，包括流动性、成交结构、稳定性和规模代理等因素。",
+                riskPenalty: "Risk Penalty（风险惩罚）",
+                riskPenaltyDesc: "根据Ledger记录的严重程度和时间衰减，以及Signals显示的上升趋势计算。",
+                proofBonus: "Proof Bonus（Proof奖励）",
+                proofBonusDesc: "根据PoR状态、审计情况和透明度维护情况给予奖励。",
+                totalScoreLabel: "Total Score（总分）",
+                riskLevelLow: "低",
+                riskLevelMed: "中",
+                riskLevelHigh: "高",
+                verified: "已验证",
+                porStatus: "PoR状态",
+                events90dLabel: "近90天事件",
+                jurisdictions: "司法辖区"
+            }
+        };
+
+        // Language switching function
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('preferredLang', lang);
+            updateUI();
+        }
+
+        // Update UI with current language
+        function updateUI() {
+            const t = translations[currentLang];
+            
+            // Update all text elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    if (el.tagName === 'INPUT' && el.type === 'text') {
+                        el.placeholder = t[key];
+                    } else {
+                        el.textContent = t[key];
+                    }
+                }
+            });
+            
+            // Update language toggle button
+            const langBtn = document.getElementById('langToggleBtn');
+            if (langBtn) {
+                langBtn.textContent = t.langToggle;
+            }
+        }
+
+        // Initialize language
+        function initLanguage() {
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang && (savedLang === 'en' || savedLang === 'zh')) {
+                currentLang = savedLang;
+            }
+            updateUI();
+        }
+
         // Exchange data
         const exchanges = {
             binance: {
