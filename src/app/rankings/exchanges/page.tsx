@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { exchanges } from "@/data/demo";
@@ -13,7 +13,7 @@ import type { PorStatus, ExchangeType } from "@/data/types";
 type SortField = "totalScore" | "riskScore" | "majorIncidents90d" | "liquidityScore" | "volume24hUsd";
 type SortOrder = "asc" | "desc";
 
-export default function RankingsPage() {
+function RankingsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   
@@ -586,5 +586,17 @@ export default function RankingsPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function RankingsPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 py-8 flex items-center justify-center">
+        <div className="text-gray-500">加载中...</div>
+      </div>
+    }>
+      <RankingsContent />
+    </Suspense>
   );
 }

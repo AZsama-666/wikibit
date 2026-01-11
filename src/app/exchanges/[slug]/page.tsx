@@ -307,7 +307,7 @@ export default function ExchangeDetailPage({ params }: PageProps) {
                       • <strong>Risk Penalty</strong>：基于风险事件账本（Ledger）和风险信号（Signals）计算。严重事件（S4/S5）惩罚更高，且根据时间衰减。Signals显示上升趋势也会增加惩罚。
                     </p>
                     <p>
-                      • <strong>Proof Bonus</strong>：PoR状态为"已验证"（verified）给予最高奖励，部分披露（partial）给予中等奖励，无PoR（none）或已过期（expired）不给予奖励。
+                      • <strong>Proof Bonus</strong>：PoR状态为&ldquo;已验证&rdquo;（verified）给予最高奖励，部分披露（partial）给予中等奖励，无PoR（none）或已过期（expired）不给予奖励。
                     </p>
                   </div>
                 </div>
