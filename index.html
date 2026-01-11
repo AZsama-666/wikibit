@@ -16,7 +16,7 @@
     <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <a href="index.html" class="flex items-center space-x-2">
+                <a href="javascript:void(0)" onclick="showHome()" class="flex items-center space-x-2">
                     <span class="text-xl font-bold text-gray-900">Wiki Risk Portal</span>
                 </a>
                 <div class="flex-1 max-w-lg mx-8">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="rankings.html" class="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg">
+                    <a href="javascript:void(0)" onclick="showRankings()" class="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg">
                         Exchanges
                     </a>
                     <button class="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg">
@@ -43,99 +43,608 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <!-- Hero Section -->
-            <div class="text-center mb-16">
-                <h1 class="text-5xl font-bold text-gray-900 mb-6">
-                    Web3 实体排名，从规模转向可验证的风险与质量
-                </h1>
-                <p class="text-xl text-gray-600 mb-8">
-                    Proof（可验证） / Ledger（可追溯） / Signals（可预警）
-                </p>
-                <a
-                    href="rankings.html"
-                    class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                    查看交易所榜单
-                    <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-            </div>
+    <!-- Main Content Container -->
+    <div id="mainContent" class="min-h-screen">
+        <!-- Home Content -->
+        <div id="homeContent" class="bg-gradient-to-b from-gray-50 to-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <!-- Hero Section -->
+                <div class="text-center mb-16">
+                    <h1 class="text-5xl font-bold text-gray-900 mb-6">
+                        Web3 实体排名，从规模转向可验证的风险与质量
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Proof（可验证） / Ledger（可追溯） / Signals（可预警）
+                    </p>
+                    <button onclick="showRankings()" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        查看交易所榜单
+                        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
 
-            <!-- 今日风险速览 -->
-            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 mb-8">
-                <h2 class="text-2xl font-semibold text-gray-900 mb-6">今日风险速览</h2>
+                <!-- 今日风险速览 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-6">今日风险速览</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="p-3 bg-red-100 rounded-lg">
+                                <svg class="h-6 w-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">活跃风险事件</p>
+                                <p class="text-2xl font-bold text-gray-900">12</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="p-3 bg-yellow-100 rounded-lg">
+                                <svg class="h-6 w-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">待验证交易所</p>
+                                <p class="text-2xl font-bold text-gray-900">8</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="p-3 bg-green-100 rounded-lg">
+                                <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">已验证 Proof</p>
+                                <p class="text-2xl font-bold text-gray-900">156</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 核心功能说明 -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="flex items-start space-x-4">
-                        <div class="p-3 bg-red-100 rounded-lg">
-                            <svg class="h-6 w-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500">活跃风险事件</p>
-                            <p class="text-2xl font-bold text-gray-900">12</p>
-                        </div>
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <svg class="h-8 w-8 text-blue-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Proof（可验证）</h3>
+                        <p class="text-gray-600">
+                            每项证据都有来源、快照日期和可信度等级，确保信息可追溯、可验证。
+                        </p>
                     </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="p-3 bg-yellow-100 rounded-lg">
-                            <svg class="h-6 w-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500">待验证交易所</p>
-                            <p class="text-2xl font-bold text-gray-900">8</p>
-                        </div>
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <svg class="h-8 w-8 text-purple-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Ledger（风险账本）</h3>
+                        <p class="text-gray-600">
+                            完整记录所有风险事件，按严重程度分类，支持时间线追溯和证据链接。
+                        </p>
                     </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="p-3 bg-green-100 rounded-lg">
-                            <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500">已验证 Proof</p>
-                            <p class="text-2xl font-bold text-gray-900">156</p>
-                        </div>
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <svg class="h-8 w-8 text-orange-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Signals（风险预警）</h3>
+                        <p class="text-gray-600">
+                            基于30天风险曲线，识别异常趋势和潜在风险信号，提前预警。
+                        </p>
                     </div>
-                </div>
-            </div>
-
-            <!-- 核心功能说明 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                    <svg class="h-8 w-8 text-blue-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                    </svg>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Proof（可验证）</h3>
-                    <p class="text-gray-600">
-                        每项证据都有来源、快照日期和可信度等级，确保信息可追溯、可验证。
-                    </p>
-                </div>
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                    <svg class="h-8 w-8 text-purple-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                    </svg>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Ledger（风险账本）</h3>
-                    <p class="text-gray-600">
-                        完整记录所有风险事件，按严重程度分类，支持时间线追溯和证据链接。
-                    </p>
-                </div>
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                    <svg class="h-8 w-8 text-orange-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                    </svg>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Signals（风险预警）</h3>
-                    <p class="text-gray-600">
-                        基于30天风险曲线，识别异常趋势和潜在风险信号，提前预警。
-                    </p>
                 </div>
             </div>
         </div>
+
+        <!-- Rankings Content -->
+        <div id="rankingsContent" class="min-h-screen bg-gray-50 py-8 hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- 页面标题 -->
+                <div class="mb-8">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">
+                        交易所综合榜（Risk-first Quality Rank）
+                    </h1>
+                    <p class="text-gray-600">不是谁最大，而是谁更透明、更稳、更可验证。</p>
+                </div>
+
+                <!-- 榜单表格 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">排名</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">交易所</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">总分</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">风险温度</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Proof</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">90天事件</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">流动性</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">24H成交量</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <!-- Coinbase -->
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm font-medium text-gray-900">#1</span></td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                                <span class="text-xs font-medium text-blue-600">C</span>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-medium text-gray-900">Coinbase</div>
+                                                <div class="text-xs text-gray-500">Coinbase</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm font-medium text-gray-900">92.0</span></td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="flex-1 bg-gray-200 rounded-full h-6 overflow-hidden">
+                                                <div class="h-full bg-green-500 rounded-full" style="width: 15%"></div>
+                                            </div>
+                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700 min-w-[3rem] text-center">低</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-1 rounded-full border text-xs font-medium bg-green-100 text-green-700 border-green-300">✅ 已验证</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">0</td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm text-gray-900">88</span></td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$3.5B</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <button onclick="showExchangeDetail('coinbase')" class="text-blue-600 hover:text-blue-900">查看</button>
+                                    </td>
+                                </tr>
+                                <!-- Binance -->
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm font-medium text-gray-900">#2</span></td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                                <span class="text-xs font-medium text-blue-600">B</span>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-medium text-gray-900">Binance</div>
+                                                <div class="text-xs text-gray-500">币安</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm font-medium text-gray-900">85.5</span></td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="flex-1 bg-gray-200 rounded-full h-6 overflow-hidden">
+                                                <div class="h-full bg-yellow-500 rounded-full flex items-center justify-end pr-2" style="width: 25%">
+                                                    <span class="text-xs font-medium text-white">25</span>
+                                                </div>
+                                            </div>
+                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-700 min-w-[3rem] text-center">中</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-1 rounded-full border text-xs font-medium bg-green-100 text-green-700 border-green-300">✅ 已验证</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">1</td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm text-gray-900">95</span></td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$12.0B</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <button onclick="showExchangeDetail('binance')" class="text-blue-600 hover:text-blue-900">查看</button>
+                                    </td>
+                                </tr>
+                                <!-- Crypto.com -->
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm font-medium text-gray-900">#3</span></td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                                <span class="text-xs font-medium text-blue-600">C</span>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-medium text-gray-900">Crypto.com</div>
+                                                <div class="text-xs text-gray-500">Crypto.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm font-medium text-gray-900">82.0</span></td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="flex-1 bg-gray-200 rounded-full h-6 overflow-hidden">
+                                                <div class="h-full bg-yellow-500 rounded-full" style="width: 30%"></div>
+                                            </div>
+                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-700 min-w-[3rem] text-center">中</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-1 rounded-full border text-xs font-medium bg-green-100 text-green-700 border-green-300">✅ 已验证</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">0</td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm text-gray-900">80</span></td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$1.8B</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <button onclick="showExchangeDetail('crypto-com')" class="text-blue-600 hover:text-blue-900">查看</button>
+                                    </td>
+                                </tr>
+                                <!-- Kraken -->
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm font-medium text-gray-900">#4</span></td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                                <span class="text-xs font-medium text-blue-600">K</span>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-medium text-gray-900">Kraken</div>
+                                                <div class="text-xs text-gray-500">Kraken</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm font-medium text-gray-900">90.0</span></td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="flex-1 bg-gray-200 rounded-full h-6 overflow-hidden">
+                                                <div class="h-full bg-green-500 rounded-full" style="width: 18%"></div>
+                                            </div>
+                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700 min-w-[3rem] text-center">低</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-1 rounded-full border text-xs font-medium bg-green-100 text-green-700 border-green-300">✅ 已验证</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">0</td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm text-gray-900">82</span></td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$1.5B</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <button onclick="showExchangeDetail('kraken')" class="text-blue-600 hover:text-blue-900">查看</button>
+                                    </td>
+                                </tr>
+                                <!-- OKX -->
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm font-medium text-gray-900">#5</span></td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                                <span class="text-xs font-medium text-blue-600">O</span>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-medium text-gray-900">OKX</div>
+                                                <div class="text-xs text-gray-500">欧易</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm font-medium text-gray-900">80.0</span></td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="flex-1 bg-gray-200 rounded-full h-6 overflow-hidden">
+                                                <div class="h-full bg-yellow-500 rounded-full" style="width: 35%"></div>
+                                            </div>
+                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-700 min-w-[3rem] text-center">中</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-1 rounded-full border text-xs font-medium bg-green-100 text-green-700 border-green-300">✅ 已验证</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2</td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm text-gray-900">85</span></td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$2.8B</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <button onclick="showExchangeDetail('okx')" class="text-blue-600 hover:text-blue-900">查看</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exchange Detail Content -->
+        <div id="detailContent" class="min-h-screen bg-gray-50 py-8 hidden">
+            <!-- Back Button -->
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+                <button onclick="showRankings()" class="inline-flex items-center text-blue-600 hover:text-blue-800">
+                    <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    返回榜单
+                </button>
+            </div>
+
+            <!-- Exchange Detail Container -->
+            <div id="exchangeDetailContainer" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
     </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Exchange data
+        const exchanges = {
+            binance: {
+                name: "Binance",
+                cnName: "币安",
+                aliases: "BN, 币安交易所",
+                totalScore: 85.5,
+                riskScore: 25,
+                riskLevel: "中",
+                riskColor: "yellow",
+                porStatus: "✅ 已验证",
+                incidents90d: 1,
+                liquidityScore: 95,
+                jurisdictions: "Global",
+                volume24h: "$12.0B",
+                oneLiner: "全球最大交易所，高流动性，PoR已验证，但近90天有1次提币异常",
+                strengths: [
+                    "24小时成交量全球第一，流动性极佳",
+                    "PoR状态为已验证，透明度较高",
+                    "在全球多个司法辖区持有合规牌照"
+                ],
+                concerns: [
+                    "近90天发生1次提币异常事件",
+                    "部分司法辖区合规状态存在争议",
+                    "历史上有安全事件记录"
+                ]
+            },
+            coinbase: {
+                name: "Coinbase",
+                cnName: "Coinbase",
+                aliases: "COIN, Coinbase交易所",
+                totalScore: 92.0,
+                riskScore: 15,
+                riskLevel: "低",
+                riskColor: "green",
+                porStatus: "✅ 已验证",
+                incidents90d: 0,
+                liquidityScore: 88,
+                jurisdictions: "US, EU",
+                volume24h: "$3.5B",
+                oneLiner: "美国合规交易所，PoR完全透明，近90天无重大事件",
+                strengths: [
+                    "在美国SEC注册，合规性最强",
+                    "纳斯达克上市公司，财务透明",
+                    "PoR状态持续验证，风险极低"
+                ],
+                concerns: [
+                    "流动性略低于头部交易所",
+                    "主要服务于欧美市场",
+                    "交易费用相对较高"
+                ]
+            },
+            okx: {
+                name: "OKX",
+                cnName: "欧易",
+                aliases: "OK, OKEx",
+                totalScore: 80.0,
+                riskScore: 35,
+                riskLevel: "中",
+                riskColor: "yellow",
+                porStatus: "✅ 已验证",
+                incidents90d: 2,
+                liquidityScore: 85,
+                jurisdictions: "Global, SG",
+                volume24h: "$2.8B",
+                oneLiner: "主流交易所，PoR已验证，但近90天有2次安全事件",
+                strengths: [
+                    "24小时成交量排名前列，流动性良好",
+                    "PoR状态为已验证",
+                    "在多个司法辖区运营"
+                ],
+                concerns: [
+                    "近90天发生2次安全相关事件",
+                    "历史上有提币限制记录",
+                    "部分司法辖区合规状态不明确"
+                ]
+            },
+            kraken: {
+                name: "Kraken",
+                cnName: "Kraken",
+                aliases: "Kraken交易所",
+                totalScore: 90.0,
+                riskScore: 18,
+                riskLevel: "低",
+                riskColor: "green",
+                porStatus: "✅ 已验证",
+                incidents90d: 0,
+                liquidityScore: 82,
+                jurisdictions: "US, EU, Global",
+                volume24h: "$1.5B",
+                oneLiner: "老牌合规交易所，PoR完全透明，近90天无重大事件",
+                strengths: [
+                    "在美国注册，合规性高",
+                    "PoR状态持续验证",
+                    "历史上安全事故少"
+                ],
+                concerns: [
+                    "流动性中等",
+                    "主要服务于欧美用户",
+                    "交易对相对较少"
+                ]
+            },
+            "crypto-com": {
+                name: "Crypto.com",
+                cnName: "Crypto.com",
+                aliases: "CRO, Crypto.com交易所",
+                totalScore: 82.0,
+                riskScore: 30,
+                riskLevel: "中",
+                riskColor: "yellow",
+                porStatus: "✅ 已验证",
+                incidents90d: 0,
+                liquidityScore: 80,
+                jurisdictions: "SG, US, EU, Global",
+                volume24h: "$1.8B",
+                oneLiner: "品牌交易所，PoR已验证，合规性强，近90天无重大事件",
+                strengths: [
+                    "品牌知名度高",
+                    "PoR状态为已验证",
+                    "在多个司法辖区合规运营"
+                ],
+                concerns: [
+                    "流动性略低于头部交易所",
+                    "交易费用相对较高",
+                    "部分功能受限"
+                ]
+            }
+        };
+
+        // Navigation functions
+        function showHome() {
+            document.getElementById('homeContent').classList.remove('hidden');
+            document.getElementById('rankingsContent').classList.add('hidden');
+            document.getElementById('detailContent').classList.add('hidden');
+        }
+
+        function showRankings() {
+            document.getElementById('homeContent').classList.add('hidden');
+            document.getElementById('rankingsContent').classList.remove('hidden');
+            document.getElementById('detailContent').classList.add('hidden');
+        }
+
+        function showExchangeDetail(slug) {
+            const exchange = exchanges[slug];
+            if (!exchange) return;
+
+            document.getElementById('homeContent').classList.add('hidden');
+            document.getElementById('rankingsContent').classList.add('hidden');
+            document.getElementById('detailContent').classList.remove('hidden');
+
+            const container = document.getElementById('exchangeDetailContainer');
+            container.innerHTML = `
+                <!-- Hero Section -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 mb-8">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-900 mb-2">${exchange.name}</h1>
+                            <p class="text-gray-600">${exchange.cnName}</p>
+                            <p class="text-sm text-gray-500 mt-1">别名: ${exchange.aliases}</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-5xl font-bold text-gray-900 mb-2">${exchange.totalScore}</div>
+                            <div class="text-sm text-gray-500">总分</div>
+                        </div>
+                    </div>
+
+                    <!-- 风险温度计 -->
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-medium text-gray-700">风险温度</span>
+                            <span class="text-2xl font-bold text-gray-900">${exchange.riskScore}</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="flex-1 bg-gray-200 rounded-full h-6 overflow-hidden">
+                                <div class="h-full bg-${exchange.riskColor}-500 rounded-full flex items-center justify-end pr-2" style="width: ${exchange.riskScore}%">
+                                    <span class="text-xs font-medium text-white">${exchange.riskScore}</span>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-${exchange.riskColor}-100 text-${exchange.riskColor}-700 min-w-[3rem] text-center">${exchange.riskLevel}</span>
+                        </div>
+                    </div>
+
+                    <!-- 关键徽章 -->
+                    <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-gray-200">
+                        <div>
+                            <span class="text-xs text-gray-500 block mb-1">PoR状态</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full border text-xs font-medium bg-green-100 text-green-700 border-green-300">${exchange.porStatus}</span>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-500 block mb-1">近90天事件</span>
+                            <span class="text-lg font-semibold text-gray-900">${exchange.incidents90d}</span>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-500 block mb-1">流动性评分</span>
+                            <span class="text-lg font-semibold text-gray-900">${exchange.liquidityScore}</span>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-500 block mb-1">司法辖区</span>
+                            <span class="text-sm font-medium text-gray-700">${exchange.jurisdictions}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 mb-8">
+                    <div class="border-b border-gray-200">
+                        <nav class="flex space-x-8 px-6">
+                            <button class="py-4 px-1 border-b-2 font-medium text-sm border-blue-500 text-blue-600">
+                                概览
+                            </button>
+                            <button class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700">
+                                Proof
+                            </button>
+                            <button class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700">
+                                Ledger
+                            </button>
+                            <button class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700">
+                                Signals
+                            </button>
+                            <button class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700">
+                                方法论
+                            </button>
+                        </nav>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="p-8">
+                        <!-- 概览 Tab -->
+                        <div class="space-y-6">
+                            <!-- 结论卡片 -->
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                                <h3 class="text-lg font-semibold text-blue-900 mb-2">结论</h3>
+                                <p class="text-blue-800">${exchange.oneLiner}</p>
+                            </div>
+
+                            <!-- 关键指标卡片 -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                                    <div class="text-sm text-gray-500 mb-1">24小时成交量</div>
+                                    <div class="text-2xl font-bold text-gray-900">${exchange.volume24h}</div>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                                    <div class="text-sm text-gray-500 mb-1">流动性评分</div>
+                                    <div class="text-2xl font-bold text-gray-900">${exchange.liquidityScore}</div>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                                    <div class="text-sm text-gray-500 mb-1">交易所类型</div>
+                                    <div class="text-2xl font-bold text-gray-900">CEX</div>
+                                </div>
+                            </div>
+
+                            <!-- Strengths -->
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3">优势</h3>
+                                <ul class="space-y-2">
+                                    ${exchange.strengths.map(strength => `
+                                        <li class="flex items-start">
+                                            <span class="text-green-500 mr-2">✓</span>
+                                            <span class="text-gray-700">${strength}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+
+                            <!-- Concerns -->
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3">关注点</h3>
+                                <ul class="space-y-2">
+                                    ${exchange.concerns.map(concern => `
+                                        <li class="flex items-start">
+                                            <span class="text-orange-500 mr-2">⚠</span>
+                                            <span class="text-gray-700">${concern}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Initialize - show home by default
+        showHome();
+    </script>
 </body>
 </html>
