@@ -1,0 +1,257 @@
+Wiki Next-Level Web3 门户排名站（Vision Demo 前端）实现文档（TXT版）
+
+0. 目标（给 Cursor 的任务说明）
+你是资深前端工程师。请用 Next.js 14+（App Router）+ TypeScript + TailwindCSS 做一个“可演示的愿景前端 Demo”，数据全部用本地 mock（静态 TS/JSON），无需接任何 API。
+重点是“看起来像真的产品”，交互顺滑、视觉高级、可在老板面前演示。
+
+Demo 必须体现的差异化（核心卖点）
+- 不只是“成交量榜单”，而是 Risk-first 门户：
+  - Proof（可验证证明）
+  - Ledger（风险事件账本）
+  - Signals（风险预警信号）
+- 强查询体验：全局搜索 + 结构化筛选（facet）+ 排序 + 分享链接（URL query params）
+- 列表“一眼看懂”：Risk 温度计 + 近 90 天事件数 + PoR/审计状态 + 流动性质量
+- 详情页必须有：风险事件时间线（Ledger Timeline）+ Proof 卡片 + Signals 风险曲线（30 天）
+
+1. 技术栈与约束
+- Next.js 14+ App Router
+- TypeScript
+- TailwindCSS
+- 图标：lucide-react
+- 图表：recharts（只用 1 个折线图即可）
+- 数据：本地 src/data/demo.ts 输出
+- 不做登录、不做真实 API、不做 i18n（默认中文 UI 文案）
+- 字体：font-family: ui-sans-serif, system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+
+2. 页面与路由（最小但完整）
+至少实现这 3 个路由：
+1) / 首页（门户入口 + 今日风险速览 + 一键进入榜单）
+2) /rankings/exchanges 交易所综合榜（核心演示页）
+3) /exchanges/[slug] 交易所详情（Proof/Ledger/Signals 三段式）
+
+可选加分：/compare 或在榜单页做一个 Compare Drawer（抽屉对比，不额外路由）。
+
+3. 视觉与布局（给老板看的质感）
+整体风格：深色/浅色任选一种，但要高级、克制、金融风控感。
+建议默认浅色：灰白底 + 细边框 + 大圆角卡片 + 低饱和强调色。
+
+全局布局（所有页面一致）
+- 顶部 Navbar：
+  - 左：Logo（Wiki Risk Portal）
+  - 中：全局搜索框（支持输入交易所名/别名/标签）
+  - 右：按钮（Exchanges / Method / About）可仅做 UI，不用跳转
+- 内容区：
+  - 最大宽度 max-w-6xl 或 max-w-7xl
+  - 页面标题 + 副标题（体现 Risk-first）
+
+4. 核心组件清单（必须实现）
+4.1 RiskTemperature（风险温度计）
+- 输入：riskScore: number (0-100)
+- UI：胶囊/圆环/进度条皆可，但要一眼识别（绿/黄/红）
+- 显示：风险温度 72 + 文案（低/中/高）
+
+4.2 ProofBadges（Proof 状态徽章）
+- 输入：porStatus: "verified" | "partial" | "none" | "expired"
+- 展示：PoR/审计状态（例如：✅ 已验证 / ⚠️ 部分披露 / ❌ 无 / 🕒 过期）
+
+4.3 LedgerTimeline（风险事件账本时间线）
+- 输入：events: RiskEvent[]
+- 事件字段：时间、类型、严重级别、状态、影响摘要、证据链接（可点开新窗口）
+- 严重级别：S1~S5（S5 最严重）用颜色与标签表达
+
+4.4 SignalsChart（预警信号折线图）
+- 输入：riskSeries: {date: string, score: number}[]（30 天）
+- 图表：折线（score），hover tooltip 显示日期与分数
+- 在图表下方列出“触发的信号解释”（规则文本即可）
+
+4.5 RankingTable（榜单表格）
+- 列至少包括：
+  - Rank
+  - 交易所名称（可带 logo 圆点占位）
+  - Total Score（0-100）
+  - Risk Temp（组件）
+  - Proof（徽章）
+  - 近 90 天事件数
+  - 流动性评分
+  - 24H 成交量（可显示为 $1.2B）
+  - 操作：View / Compare（可选）
+
+5. 交易所榜单页（/rankings/exchanges）交互要求（重点）
+5.1 筛选区（左侧或顶部）
+必须支持这些 facet：
+- 地区/司法辖区（多选）：Global / US / EU / SG / HK / UAE / Offshore 等
+- PoR 状态：verified / partial / none / expired
+- 近 90 天重大事件：0 / 1-2 / 3+
+- 风险温度范围：滑条（0-100）serious）或三个档（低/中/高）
+- 类型：CEX / DEX（先只做 CEX 数据也行，但 UI 要留）
+
+5.2 搜索
+- 搜索框输入后即时过滤表格（client side）
+- 支持：name（Binance）、cnName（币安）、aliases（BN、币安交易所等）、tags（“高流动性”“合规牌照”）
+
+5.3 排序
+- 默认按 Total Score 降序
+- 可切换排序：
+  - Risk Temp 升/降
+  - 近 90 天事件数 升/降
+  - 流动性评分 升/降
+  - 24H 成交量 升/降
+
+5.4 分享链接（老板很爱）
+- 把搜索词、筛选条件、排序写入 URL query params
+- 刷新页面后条件仍保留
+- 提供一个 “复制分享链接” 按钮（复制 window.location.href）
+
+5.5 导出 CSV（演示用）
+- “导出 CSV”按钮：把当前筛选后的列表生成 CSV 并触发下载（前端完成）
+
+6. 交易所详情页（/exchanges/[slug]）信息架构
+详情页顶部 Hero：
+- 左：交易所名 + 别名
+- 中：Total Score 大号数字
+- 右：RiskTemperature 大号展示
+- 下方一排关键徽章：
+  - PoR 状态
+  - 近 90 天事件数
+  - 流动性评分
+  - 司法辖区
+
+详情页主体采用 Tabs（必须有这 5 个 Tab）：
+1) 概览 Overview（关键指标卡片 + 一句话结论）
+2) Proof（Proof 卡片列表：证据链接 + 快照日期 + 可信度等级 A/B/C）
+3) Ledger（LedgerTimeline）
+4) Signals（SignalsChart + 触发规则解释）
+5) 方法论 Method（解释评分结构：Base Quality / Risk Penalty / Proof Bonus）
+
+每个 Tab 都要看起来内容“够多”，哪怕是 mock 数据。
+
+7. 数据模型（本地 mock，必须按此结构组织）
+请在 src/data/demo.ts 输出：
+- exchanges: Exchange[]
+- riskEventsByExchange: Record<string, RiskEvent[]>
+- riskSeriesByExchange: Record<string, RiskPoint[]>
+
+Type 定义（Cursor 直接照抄实现）
+export type PorStatus = "verified" | "partial" | "none" | "expired";
+export type ExchangeType = "CEX" | "DEX";
+
+export type Exchange = {
+  id: string;
+  slug: string;
+  name: string;
+  cnName: string;
+  aliases: string[];
+  type: ExchangeType;
+  jurisdictions: string[]; // e.g. ["Global", "EU"]
+  totalScore: number; // 0-100
+  riskScore: number;  // 0-100
+  porStatus: PorStatus;
+  liquidityScore: number; // 0-100
+  volume24hUsd: number; // raw number
+  majorIncidents90d: number; // integer
+  tags: string[];
+  highlights: {
+    oneLiner: string; // e.g. "高流动性，但近90天出现2次提币异常"
+    strengths: string[];
+    concerns: string[];
+  };
+  proof: {
+    title: string;
+    level: "A" | "B" | "C";
+    snapshotDate: string; // ISO date
+    sourceName: string;
+    sourceUrl: string;
+    note: string;
+  }[];
+};
+
+export type RiskEvent = {
+  id: string;
+  exchangeSlug: string;
+  category: "Security" | "Withdrawal" | "Compliance" | "Outage" | "DataIntegrity";
+  severity: "S1" | "S2" | "S3" | "S4" | "S5";
+  status: "Ongoing" | "Resolved" | "Disputed";
+  startDate: string; // ISO
+  endDate?: string;  // ISO
+  title: string;
+  impactNote: string;
+  evidence: { sourceName: string; url: string; capturedAt: string; level: "A" | "B" | "C" }[];
+};
+
+export type RiskPoint = { date: string; score: number };
+
+8. Demo 数据（至少 10 家交易所，要求“看起来真实”）
+请构造 10 条 Exchange 数据，每条都要差异明显：
+- 有的 PoR verified 但风险中等（历史事故多）
+- 有的 PoR none 但风险低（小而稳）
+- 有的风险很高（近 90 天 Ongoing 事件）
+- 有的流动性高但数据诚信有争议（DataIntegrity）
+
+并且每个交易所至少配：
+- 3 条 Proof
+- 5 条 Ledger 事件（其中至少 1 条 S4/S5）
+- 30 天 riskSeries（用随机波动但要符合 riskScore 的“基调”）
+
+注意：证据链接可以用占位链接（例如 https://example.com/...），但 UI 必须支持点击。
+
+9. 文案（直接用于页面）
+首页 Hero
+- 标题：“Web3 实体排名，从规模转向可验证的风险与质量。”
+- 副标题：Proof（可验证） / Ledger（可追溯） / Signals（可预警）
+
+榜单页标题
+- “交易所综合榜（Risk-first Quality Rank）”
+- 副标题：“不是谁最大，而是谁更透明、更稳、更可验证。”
+
+详情页总结卡（Overview）
+- 模板：
+  - “结论：{oneLiner}”
+  - Strengths（3 条）
+  - Concerns（3 条）
+
+10. 评分展示（不需要真算法，但要解释得像真的）
+在 Method Tab 显示：
+- Total Score = Base Quality × (1 - Risk Penalty) + Proof Bonus
+- Base Quality（流动性/成交结构/稳定性/规模代理）
+- Risk Penalty（Ledger 严重度 × 时间衰减 + Signals 上升趋势）
+- Proof Bonus（PoR/审计/透明度维护）
+
+前端只展示说明与 mock breakdown，例如：
+- Base Quality: 78
+- Risk Penalty: 0.18
+- Proof Bonus: +12
+- Total: 78×(1-0.18)+12 ≈ 76
+
+11. 文件结构建议（Cursor 生成时按这个来）
+- src/app/layout.tsx（全局布局 + Navbar）
+- src/app/page.tsx（首页）
+- src/app/rankings/exchanges/page.tsx（榜单页）
+- src/app/exchanges/[slug]/page.tsx（详情页）
+- src/components/
+  - RiskTemperature.tsx
+  - ProofBadges.tsx
+  - LedgerTimeline.tsx
+  - SignalsChart.tsx
+  - RankingTable.tsx
+  - FilterPanel.tsx
+  - Tag.tsx
+- src/data/demo.ts
+- src/lib/format.ts（格式化：USD、日期、分数）
+
+12. 验收标准（老板演示 Checklist）
+1) 首页能一眼看出“风险门户”定位
+2) 榜单页能搜索、筛选、排序，并且 URL 会记录条件
+3) 榜单行里能看到：Risk 温度 + Proof 状态 + 90 天事件数
+4) 点进详情页能看到：Proof 卡片、Ledger 时间线、Signals 折线图
+5) UI 观感“像一个真的产品”（卡片、间距、排版、无明显粗糙感）
+6) 能导出 CSV、能复制分享链接（演示很加分）
+
+13.（可选加分）对比抽屉 Compare Drawer
+- 在榜单行加 Compare 按钮
+- 右侧弹出抽屉，最多选择 3 家交易所
+- 对比维度：Total / Risk / PoR / 90d事件 / Liquidity
+- 抽屉底部按钮：打开对比视图（可在同页展开对比表）
+
+你现在要做的事
+把这份文档整段复制到 Cursor，然后在最后追加一句话：
+“请直接生成可运行的项目代码，并确保 npm run dev 即可看到上述 3 个页面，且全部用 mock 数据支撑。”
