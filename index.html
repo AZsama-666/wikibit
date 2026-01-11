@@ -386,6 +386,97 @@
                     "近90天发生1次提币异常事件",
                     "部分司法辖区合规状态存在争议",
                     "历史上有安全事件记录"
+                ],
+                proof: [
+                    {
+                        title: "Merkle Tree PoR 快照",
+                        level: "A",
+                        snapshotDate: "2024-01-15",
+                        sourceName: "Binance官方",
+                        sourceUrl: "https://example.com/binance-por-2024-01",
+                        note: "最新的Merkle Tree储备证明，覆盖所有主要资产"
+                    },
+                    {
+                        title: "第三方审计报告",
+                        level: "A",
+                        snapshotDate: "2024-01-10",
+                        sourceName: "Mazars审计",
+                        sourceUrl: "https://example.com/binance-audit-2024",
+                        note: "由Mazars会计师事务所出具的储备证明审计报告"
+                    },
+                    {
+                        title: "监管备案文件",
+                        level: "B",
+                        snapshotDate: "2023-12-20",
+                        sourceName: "法国AMF",
+                        sourceUrl: "https://example.com/binance-amf-2023",
+                        note: "在法国AMF注册的加密货币服务提供商资质"
+                    }
+                ],
+                ledger: [
+                    {
+                        id: "evt-1",
+                        category: "Withdrawal",
+                        severity: "S3",
+                        status: "Resolved",
+                        startDate: "2024-01-05",
+                        endDate: "2024-01-06",
+                        title: "ETH提币延迟异常",
+                        impactNote: "部分用户ETH提币延迟长达6小时，官方解释为网络拥堵",
+                        evidence: [
+                            { sourceName: "Twitter用户报告", url: "https://example.com/twitter-withdrawal-issue", level: "B" }
+                        ]
+                    },
+                    {
+                        id: "evt-2",
+                        category: "Security",
+                        severity: "S2",
+                        status: "Resolved",
+                        startDate: "2023-12-15",
+                        endDate: "2023-12-15",
+                        title: "API密钥泄露报告",
+                        impactNote: "少量用户报告API密钥可能泄露，官方建议重置",
+                        evidence: [
+                            { sourceName: "官方公告", url: "https://example.com/binance-api-warning", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-3",
+                        category: "Compliance",
+                        severity: "S4",
+                        status: "Ongoing",
+                        startDate: "2024-01-10",
+                        title: "美国监管调查",
+                        impactNote: "美国SEC持续调查合规问题，可能导致业务限制",
+                        evidence: [
+                            { sourceName: "SEC公告", url: "https://example.com/binance-sec-investigation", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-4",
+                        category: "Outage",
+                        severity: "S2",
+                        status: "Resolved",
+                        startDate: "2023-12-20",
+                        endDate: "2023-12-20",
+                        title: "短暂服务中断",
+                        impactNote: "系统维护导致服务中断约30分钟",
+                        evidence: [
+                            { sourceName: "官方公告", url: "https://example.com/binance-maintenance", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-5",
+                        category: "DataIntegrity",
+                        severity: "S3",
+                        status: "Disputed",
+                        startDate: "2023-11-25",
+                        title: "交易数据争议",
+                        impactNote: "有用户质疑交易数据的准确性，官方否认",
+                        evidence: [
+                            { sourceName: "社区讨论", url: "https://example.com/binance-data-dispute", level: "C" }
+                        ]
+                    }
                 ]
             },
             coinbase: {
@@ -411,6 +502,99 @@
                     "流动性略低于头部交易所",
                     "主要服务于欧美市场",
                     "交易费用相对较高"
+                ],
+                proof: [
+                    {
+                        title: "月度PoR报告",
+                        level: "A",
+                        snapshotDate: "2024-01-20",
+                        sourceName: "Coinbase官方",
+                        sourceUrl: "https://example.com/coinbase-por-2024-01",
+                        note: "每月定期发布的储备证明报告，详细列出所有资产"
+                    },
+                    {
+                        title: "SEC季度报告",
+                        level: "A",
+                        snapshotDate: "2024-01-15",
+                        sourceName: "SEC EDGAR",
+                        sourceUrl: "https://example.com/coinbase-sec-10q",
+                        note: "作为上市公司，定期向SEC提交10-Q季度报告"
+                    },
+                    {
+                        title: "SOC 2 Type II审计",
+                        level: "A",
+                        snapshotDate: "2023-12-31",
+                        sourceName: "Deloitte审计",
+                        sourceUrl: "https://example.com/coinbase-soc2",
+                        note: "由德勤出具的SOC 2 Type II安全和可用性审计"
+                    }
+                ],
+                ledger: [
+                    {
+                        id: "evt-cb-1",
+                        category: "Compliance",
+                        severity: "S2",
+                        status: "Resolved",
+                        startDate: "2023-12-10",
+                        endDate: "2023-12-12",
+                        title: "监管文件提交延迟",
+                        impactNote: "季度报告提交延迟2天，已补充提交",
+                        evidence: [
+                            { sourceName: "SEC EDGAR", url: "https://example.com/coinbase-sec-delay", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-cb-2",
+                        category: "Outage",
+                        severity: "S1",
+                        status: "Resolved",
+                        startDate: "2024-01-08",
+                        endDate: "2024-01-08",
+                        title: "API服务短暂中断",
+                        impactNote: "API服务中断约10分钟，已恢复",
+                        evidence: [
+                            { sourceName: "官方状态页", url: "https://example.com/coinbase-status", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-cb-3",
+                        category: "Security",
+                        severity: "S2",
+                        status: "Resolved",
+                        startDate: "2023-11-20",
+                        endDate: "2023-11-21",
+                        title: "钓鱼网站警告",
+                        impactNote: "发现大量仿冒Coinbase的钓鱼网站，官方发出警告",
+                        evidence: [
+                            { sourceName: "官方公告", url: "https://example.com/coinbase-phishing-warning", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-cb-4",
+                        category: "Compliance",
+                        severity: "S1",
+                        status: "Resolved",
+                        startDate: "2023-12-05",
+                        endDate: "2023-12-05",
+                        title: "KYC流程更新",
+                        impactNote: "更新KYC要求，部分用户需要重新验证",
+                        evidence: [
+                            { sourceName: "官方公告", url: "https://example.com/coinbase-kyc-update", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-cb-5",
+                        category: "DataIntegrity",
+                        severity: "S1",
+                        status: "Resolved",
+                        startDate: "2023-11-15",
+                        endDate: "2023-11-15",
+                        title: "价格显示短暂异常",
+                        impactNote: "部分交易对价格显示异常约5分钟，已修复",
+                        evidence: [
+                            { sourceName: "用户报告", url: "https://example.com/coinbase-price-issue", level: "B" }
+                        ]
+                    }
                 ]
             },
             okx: {
@@ -436,6 +620,98 @@
                     "近90天发生2次安全相关事件",
                     "历史上有提币限制记录",
                     "部分司法辖区合规状态不明确"
+                ],
+                proof: [
+                    {
+                        title: "Merkle Tree PoR",
+                        level: "A",
+                        snapshotDate: "2024-01-18",
+                        sourceName: "OKX官方",
+                        sourceUrl: "https://example.com/okx-por-2024-01",
+                        note: "Merkle Tree储备证明，覆盖BTC、ETH等主要资产"
+                    },
+                    {
+                        title: "第三方审计",
+                        level: "B",
+                        snapshotDate: "2024-01-12",
+                        sourceName: "Armanino审计",
+                        sourceUrl: "https://example.com/okx-armanino",
+                        note: "Armanino出具的储备证明审计"
+                    },
+                    {
+                        title: "监管许可",
+                        level: "B",
+                        snapshotDate: "2023-12-15",
+                        sourceName: "新加坡MAS",
+                        sourceUrl: "https://example.com/okx-mas",
+                        note: "在新加坡MAS的加密货币服务许可"
+                    }
+                ],
+                ledger: [
+                    {
+                        id: "evt-okx-1",
+                        category: "Security",
+                        severity: "S4",
+                        status: "Resolved",
+                        startDate: "2024-01-12",
+                        endDate: "2024-01-13",
+                        title: "可疑账户活动",
+                        impactNote: "检测到可疑账户活动，临时冻结部分账户进行调查",
+                        evidence: [
+                            { sourceName: "官方公告", url: "https://example.com/okx-security-incident", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-okx-2",
+                        category: "Withdrawal",
+                        severity: "S3",
+                        status: "Resolved",
+                        startDate: "2023-12-25",
+                        endDate: "2023-12-26",
+                        title: "BTC提币延迟",
+                        impactNote: "部分用户BTC提币延迟，官方解释为网络拥堵",
+                        evidence: [
+                            { sourceName: "用户报告", url: "https://example.com/okx-withdrawal-delay", level: "B" }
+                        ]
+                    },
+                    {
+                        id: "evt-okx-3",
+                        category: "Outage",
+                        severity: "S2",
+                        status: "Resolved",
+                        startDate: "2024-01-02",
+                        endDate: "2024-01-02",
+                        title: "系统维护中断",
+                        impactNote: "计划维护导致服务中断约1小时",
+                        evidence: [
+                            { sourceName: "官方公告", url: "https://example.com/okx-maintenance", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-okx-4",
+                        category: "DataIntegrity",
+                        severity: "S3",
+                        status: "Disputed",
+                        startDate: "2023-12-10",
+                        title: "交易数据质疑",
+                        impactNote: "用户质疑部分交易数据的准确性",
+                        evidence: [
+                            { sourceName: "社区讨论", url: "https://example.com/okx-data-dispute", level: "C" }
+                        ]
+                    },
+                    {
+                        id: "evt-okx-5",
+                        category: "Compliance",
+                        severity: "S2",
+                        status: "Resolved",
+                        startDate: "2023-11-28",
+                        endDate: "2023-11-30",
+                        title: "监管文件更新",
+                        impactNote: "更新用户协议和监管披露文件",
+                        evidence: [
+                            { sourceName: "官方公告", url: "https://example.com/okx-terms-update", level: "A" }
+                        ]
+                    }
                 ]
             },
             kraken: {
@@ -461,6 +737,99 @@
                     "流动性中等",
                     "主要服务于欧美用户",
                     "交易对相对较少"
+                ],
+                proof: [
+                    {
+                        title: "实时PoR证明",
+                        level: "A",
+                        snapshotDate: "2024-01-19",
+                        sourceName: "Kraken官方",
+                        sourceUrl: "https://example.com/kraken-por-2024-01",
+                        note: "实时更新的储备证明，可随时验证"
+                    },
+                    {
+                        title: "CFTC注册",
+                        level: "A",
+                        snapshotDate: "2023-12-01",
+                        sourceName: "CFTC",
+                        sourceUrl: "https://example.com/kraken-cftc",
+                        note: "在CFTC注册为期货佣金商"
+                    },
+                    {
+                        title: "SOC 2审计",
+                        level: "A",
+                        snapshotDate: "2023-11-30",
+                        sourceName: "第三方审计",
+                        sourceUrl: "https://example.com/kraken-soc2",
+                        note: "SOC 2 Type II安全和可用性审计"
+                    }
+                ],
+                ledger: [
+                    {
+                        id: "evt-kr-1",
+                        category: "Outage",
+                        severity: "S1",
+                        status: "Resolved",
+                        startDate: "2024-01-05",
+                        endDate: "2024-01-05",
+                        title: "API短暂中断",
+                        impactNote: "API服务中断约15分钟",
+                        evidence: [
+                            { sourceName: "官方状态页", url: "https://example.com/kraken-status", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-kr-2",
+                        category: "Security",
+                        severity: "S2",
+                        status: "Resolved",
+                        startDate: "2023-12-18",
+                        endDate: "2023-12-18",
+                        title: "安全更新公告",
+                        impactNote: "发布安全更新，建议用户更新2FA设置",
+                        evidence: [
+                            { sourceName: "官方公告", url: "https://example.com/kraken-security-update", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-kr-3",
+                        category: "Compliance",
+                        severity: "S1",
+                        status: "Resolved",
+                        startDate: "2023-12-01",
+                        endDate: "2023-12-01",
+                        title: "监管文件更新",
+                        impactNote: "更新监管披露文件",
+                        evidence: [
+                            { sourceName: "官方公告", url: "https://example.com/kraken-compliance-update", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-kr-4",
+                        category: "Withdrawal",
+                        severity: "S1",
+                        status: "Resolved",
+                        startDate: "2023-11-22",
+                        endDate: "2023-11-22",
+                        title: "提币处理延迟",
+                        impactNote: "部分提币处理延迟，已恢复正常",
+                        evidence: [
+                            { sourceName: "用户报告", url: "https://example.com/kraken-withdrawal-delay", level: "B" }
+                        ]
+                    },
+                    {
+                        id: "evt-kr-5",
+                        category: "DataIntegrity",
+                        severity: "S1",
+                        status: "Resolved",
+                        startDate: "2023-11-10",
+                        endDate: "2023-11-10",
+                        title: "价格显示短暂异常",
+                        impactNote: "部分交易对价格显示异常约3分钟",
+                        evidence: [
+                            { sourceName: "用户报告", url: "https://example.com/kraken-price-issue", level: "B" }
+                        ]
+                    }
                 ]
             },
             "crypto-com": {
@@ -486,6 +855,99 @@
                     "流动性略低于头部交易所",
                     "交易费用相对较高",
                     "部分功能受限"
+                ],
+                proof: [
+                    {
+                        title: "Merkle Tree PoR",
+                        level: "A",
+                        snapshotDate: "2024-01-17",
+                        sourceName: "Crypto.com官方",
+                        sourceUrl: "https://example.com/crypto-por-2024-01",
+                        note: "Merkle Tree储备证明，定期更新"
+                    },
+                    {
+                        title: "第三方审计",
+                        level: "A",
+                        snapshotDate: "2024-01-10",
+                        sourceName: "Armanino审计",
+                        sourceUrl: "https://example.com/crypto-armanino",
+                        note: "Armanino出具的储备证明审计"
+                    },
+                    {
+                        title: "监管许可",
+                        level: "A",
+                        snapshotDate: "2023-12-20",
+                        sourceName: "新加坡MAS",
+                        sourceUrl: "https://example.com/crypto-mas",
+                        note: "在新加坡MAS获得主要支付机构许可"
+                    }
+                ],
+                ledger: [
+                    {
+                        id: "evt-cro-1",
+                        category: "Security",
+                        severity: "S1",
+                        status: "Resolved",
+                        startDate: "2023-12-15",
+                        endDate: "2023-12-15",
+                        title: "安全更新",
+                        impactNote: "发布安全更新，建议用户更新2FA",
+                        evidence: [
+                            { sourceName: "官方公告", url: "https://example.com/crypto-security-update", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-cro-2",
+                        category: "Outage",
+                        severity: "S1",
+                        status: "Resolved",
+                        startDate: "2024-01-02",
+                        endDate: "2024-01-02",
+                        title: "API短暂中断",
+                        impactNote: "API服务中断约10分钟",
+                        evidence: [
+                            { sourceName: "官方状态页", url: "https://example.com/crypto-status", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-cro-3",
+                        category: "Compliance",
+                        severity: "S1",
+                        status: "Resolved",
+                        startDate: "2023-12-01",
+                        endDate: "2023-12-01",
+                        title: "监管文件更新",
+                        impactNote: "更新监管披露文件",
+                        evidence: [
+                            { sourceName: "官方公告", url: "https://example.com/crypto-compliance-update", level: "A" }
+                        ]
+                    },
+                    {
+                        id: "evt-cro-4",
+                        category: "Withdrawal",
+                        severity: "S1",
+                        status: "Resolved",
+                        startDate: "2023-11-18",
+                        endDate: "2023-11-18",
+                        title: "提币处理延迟",
+                        impactNote: "部分提币处理延迟，已恢复正常",
+                        evidence: [
+                            { sourceName: "用户报告", url: "https://example.com/crypto-withdrawal-delay", level: "B" }
+                        ]
+                    },
+                    {
+                        id: "evt-cro-5",
+                        category: "DataIntegrity",
+                        severity: "S1",
+                        status: "Resolved",
+                        startDate: "2023-11-05",
+                        endDate: "2023-11-05",
+                        title: "价格显示短暂异常",
+                        impactNote: "部分交易对价格显示异常约3分钟",
+                        evidence: [
+                            { sourceName: "用户报告", url: "https://example.com/crypto-price-issue", level: "B" }
+                        ]
+                    }
                 ]
             }
         };
@@ -503,9 +965,295 @@
             document.getElementById('detailContent').classList.add('hidden');
         }
 
+        // 全局变量存储当前交易所slug
+        let currentExchangeSlug = '';
+
+        // 辅助函数：格式化日期
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        // 辅助函数：获取级别颜色
+        function getLevelColor(level) {
+            switch(level) {
+                case 'A': return 'bg-green-100 text-green-700 border-green-300';
+                case 'B': return 'bg-yellow-100 text-yellow-700 border-yellow-300';
+                case 'C': return 'bg-red-100 text-red-700 border-red-300';
+                default: return 'bg-gray-100 text-gray-700 border-gray-300';
+            }
+        }
+
+        // 辅助函数：获取严重程度配置
+        function getSeverityConfig(severity) {
+            const configs = {
+                'S1': { color: 'bg-blue-100 text-blue-700 border-blue-300', label: 'S1 轻微' },
+                'S2': { color: 'bg-green-100 text-green-700 border-green-300', label: 'S2 低' },
+                'S3': { color: 'bg-yellow-100 text-yellow-700 border-yellow-300', label: 'S3 中' },
+                'S4': { color: 'bg-orange-100 text-orange-700 border-orange-300', label: 'S4 高' },
+                'S5': { color: 'bg-red-100 text-red-700 border-red-300', label: 'S5 严重' }
+            };
+            return configs[severity] || configs['S1'];
+        }
+
+        // 辅助函数：获取状态配置
+        function getStatusConfig(status) {
+            const configs = {
+                'Ongoing': { color: 'text-orange-600', label: '进行中', icon: '🟠' },
+                'Resolved': { color: 'text-green-600', label: '已解决', icon: '✓' },
+                'Disputed': { color: 'text-red-600', label: '有争议', icon: '⚠' }
+            };
+            return configs[status] || configs['Resolved'];
+        }
+
+        // 辅助函数：获取类别标签
+        function getCategoryLabel(category) {
+            const labels = {
+                'Security': '安全',
+                'Withdrawal': '提币',
+                'Compliance': '合规',
+                'Outage': '服务中断',
+                'DataIntegrity': '数据完整性'
+            };
+            return labels[category] || category;
+        }
+
+        // 切换Tab函数
+        function switchTab(tabName) {
+            currentExchangeSlug = currentExchangeSlug || window.currentExchangeSlug;
+            const exchange = exchanges[currentExchangeSlug];
+            if (!exchange) return;
+
+            const tabContent = document.getElementById('tabContent');
+            const tabButtons = document.querySelectorAll('[data-tab]');
+            
+            // 更新按钮状态
+            tabButtons.forEach(btn => {
+                const btnTab = btn.getAttribute('data-tab');
+                if (btnTab === tabName) {
+                    btn.classList.remove('border-transparent', 'text-gray-500');
+                    btn.classList.add('border-blue-500', 'text-blue-600');
+                } else {
+                    btn.classList.remove('border-blue-500', 'text-blue-600');
+                    btn.classList.add('border-transparent', 'text-gray-500');
+                }
+            });
+
+            // 生成对应Tab的内容
+            let content = '';
+            if (tabName === 'overview') {
+                content = generateOverviewTab(exchange);
+            } else if (tabName === 'proof') {
+                content = generateProofTab(exchange);
+            } else if (tabName === 'ledger') {
+                content = generateLedgerTab(exchange);
+            } else if (tabName === 'signals') {
+                content = generateSignalsTab(exchange);
+            } else if (tabName === 'method') {
+                content = generateMethodTab(exchange);
+            }
+            
+            tabContent.innerHTML = content;
+        }
+
+        // 生成概览Tab内容
+        function generateOverviewTab(exchange) {
+            return `
+                <div class="space-y-6">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-2">结论</h3>
+                        <p class="text-blue-800">${exchange.oneLiner}</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                            <div class="text-sm text-gray-500 mb-1">24小时成交量</div>
+                            <div class="text-2xl font-bold text-gray-900">${exchange.volume24h}</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                            <div class="text-sm text-gray-500 mb-1">流动性评分</div>
+                            <div class="text-2xl font-bold text-gray-900">${exchange.liquidityScore}</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                            <div class="text-sm text-gray-500 mb-1">交易所类型</div>
+                            <div class="text-2xl font-bold text-gray-900">CEX</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">优势</h3>
+                        <ul class="space-y-2">
+                            ${exchange.strengths.map(s => `<li class="flex items-start"><span class="text-green-500 mr-2">✓</span><span class="text-gray-700">${s}</span></li>`).join('')}
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">关注点</h3>
+                        <ul class="space-y-2">
+                            ${exchange.concerns.map(c => `<li class="flex items-start"><span class="text-orange-500 mr-2">⚠</span><span class="text-gray-700">${c}</span></li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+        }
+
+        // 生成Proof Tab内容
+        function generateProofTab(exchange) {
+            if (!exchange.proof || exchange.proof.length === 0) {
+                return '<div class="text-center py-12 text-gray-500"><p>暂无Proof记录</p></div>';
+            }
+            return `
+                <div class="space-y-4">
+                    ${exchange.proof.map(p => `
+                        <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-2">${p.title}</h3>
+                                    <div class="flex items-center space-x-4 text-sm text-gray-500 mb-2">
+                                        <span>快照日期: ${formatDate(p.snapshotDate)}</span>
+                                        <span>来源: ${p.sourceName}</span>
+                                    </div>
+                                    <p class="text-gray-700">${p.note}</p>
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium border ${getLevelColor(p.level)}">
+                                    可信度 ${p.level}
+                                </span>
+                            </div>
+                            <a href="${p.sourceUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                <span>查看证据</span>
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // 生成Ledger Tab内容
+        function generateLedgerTab(exchange) {
+            if (!exchange.ledger || exchange.ledger.length === 0) {
+                return '<div class="text-center py-12 text-gray-500"><p>暂无风险事件记录</p></div>';
+            }
+            const sortedEvents = [...exchange.ledger].sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
+            return `
+                <div class="space-y-6">
+                    ${sortedEvents.map((event, index) => {
+                        const severity = getSeverityConfig(event.severity);
+                        const status = getStatusConfig(event.status);
+                        const categoryLabel = getCategoryLabel(event.category);
+                        return `
+                            <div class="relative pl-8 border-l-2 border-gray-200 ${index < sortedEvents.length - 1 ? 'pb-8' : ''}">
+                                <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-gray-400 border-2 border-white"></div>
+                                <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+                                    <div class="flex items-start justify-between mb-4">
+                                        <div class="flex-1">
+                                            <div class="flex items-center space-x-2 mb-2">
+                                                <h3 class="text-lg font-semibold text-gray-900">${event.title}</h3>
+                                            </div>
+                                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                                <span>${formatDate(event.startDate)}</span>
+                                                ${event.endDate ? `<span>至 ${formatDate(event.endDate)}</span>` : ''}
+                                                ${!event.endDate && event.status === 'Ongoing' ? '<span class="text-orange-600">进行中</span>' : ''}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-2 mb-4">
+                                        <span class="px-3 py-1 rounded-full text-xs font-medium border ${severity.color}">${severity.label}</span>
+                                        <span class="px-3 py-1 rounded-full text-xs font-medium border bg-gray-50 ${status.color}">
+                                            ${status.icon} ${status.label}
+                                        </span>
+                                        <span class="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 border border-gray-300">${categoryLabel}</span>
+                                    </div>
+                                    <div class="mb-4">
+                                        <p class="text-gray-700 leading-relaxed">${event.impactNote}</p>
+                                    </div>
+                                    ${event.evidence && event.evidence.length > 0 ? `
+                                        <div class="border-t border-gray-200 pt-4">
+                                            <h4 class="text-sm font-medium text-gray-900 mb-2">证据链接</h4>
+                                            <div class="space-y-2">
+                                                ${event.evidence.map(ev => `
+                                                    <a href="${ev.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-800 text-sm">
+                                                        <span>${ev.sourceName}</span>
+                                                        <span class="px-2 py-0.5 rounded text-xs bg-gray-100 text-gray-600">${ev.level}</span>
+                                                        <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                                        </svg>
+                                                    </a>
+                                                `).join('')}
+                                            </div>
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+        }
+
+        // 生成Signals Tab内容（简化版，后续可扩展）
+        function generateSignalsTab(exchange) {
+            return `
+                <div class="space-y-6">
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">风险信号（30天趋势）</h3>
+                        <p class="text-gray-600 mb-4">基于30天的风险评分数据，识别异常趋势和潜在风险信号。</p>
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <p class="text-sm text-blue-800">当前风险温度: <span class="font-semibold">${exchange.riskScore}</span> (${exchange.riskLevel})</p>
+                            <p class="text-sm text-blue-700 mt-2">近90天事件数: ${exchange.incidents90d}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // 生成方法论Tab内容
+        function generateMethodTab(exchange) {
+            const baseQuality = Math.round(exchange.totalScore * 0.9);
+            const riskPenalty = exchange.riskScore / 100;
+            const proofBonus = exchange.porStatus === "✅ 已验证" ? 12 : 6;
+            const calculatedTotal = Math.round(baseQuality * (1 - riskPenalty) + proofBonus);
+            return `
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">评分公式</h3>
+                        <div class="bg-gray-50 rounded-lg p-6 border border-gray-200 mb-4">
+                            <p class="text-lg font-medium text-gray-900 mb-2">
+                                Total Score = Base Quality × (1 - Risk Penalty) + Proof Bonus
+                            </p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="font-semibold text-gray-900 mb-2">Base Quality（基础质量）</h4>
+                                <p class="text-gray-700 mb-2">评估交易所的基础质量，包括流动性、成交结构、稳定性和规模代理等因素。</p>
+                                <div class="text-2xl font-bold text-gray-900">${baseQuality}</div>
+                            </div>
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="font-semibold text-gray-900 mb-2">Risk Penalty（风险惩罚）</h4>
+                                <p class="text-gray-700 mb-2">根据Ledger记录的严重程度和时间衰减，以及Signals显示的上升趋势计算。</p>
+                                <div class="text-2xl font-bold text-gray-900">${riskPenalty.toFixed(2)} (${(riskPenalty * 100).toFixed(0)}%)</div>
+                            </div>
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="font-semibold text-gray-900 mb-2">Proof Bonus（Proof奖励）</h4>
+                                <p class="text-gray-700 mb-2">根据PoR状态、审计情况和透明度维护情况给予奖励。</p>
+                                <div class="text-2xl font-bold text-green-600">+${proofBonus}</div>
+                            </div>
+                            <div class="border-2 border-blue-500 rounded-lg p-4 bg-blue-50">
+                                <h4 class="font-semibold text-gray-900 mb-2">Total Score（总分）</h4>
+                                <div class="text-3xl font-bold text-gray-900">${calculatedTotal} ≈ ${exchange.totalScore}</div>
+                                <p class="text-sm text-gray-600 mt-2">${baseQuality} × (1 - ${riskPenalty.toFixed(2)}) + ${proofBonus} = ${calculatedTotal}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
         function showExchangeDetail(slug) {
             const exchange = exchanges[slug];
             if (!exchange) return;
+
+            currentExchangeSlug = slug;
+            window.currentExchangeSlug = slug;
 
             document.getElementById('homeContent').classList.add('hidden');
             document.getElementById('rankingsContent').classList.add('hidden');
@@ -568,76 +1316,27 @@
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 mb-8">
                     <div class="border-b border-gray-200">
                         <nav class="flex space-x-8 px-6">
-                            <button class="py-4 px-1 border-b-2 font-medium text-sm border-blue-500 text-blue-600">
+                            <button data-tab="overview" onclick="switchTab('overview')" class="py-4 px-1 border-b-2 font-medium text-sm border-blue-500 text-blue-600">
                                 概览
                             </button>
-                            <button class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700">
+                            <button data-tab="proof" onclick="switchTab('proof')" class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700">
                                 Proof
                             </button>
-                            <button class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700">
+                            <button data-tab="ledger" onclick="switchTab('ledger')" class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700">
                                 Ledger
                             </button>
-                            <button class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700">
+                            <button data-tab="signals" onclick="switchTab('signals')" class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700">
                                 Signals
                             </button>
-                            <button class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700">
+                            <button data-tab="method" onclick="switchTab('method')" class="py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700">
                                 方法论
                             </button>
                         </nav>
                     </div>
 
                     <!-- Tab Content -->
-                    <div class="p-8">
-                        <!-- 概览 Tab -->
-                        <div class="space-y-6">
-                            <!-- 结论卡片 -->
-                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                                <h3 class="text-lg font-semibold text-blue-900 mb-2">结论</h3>
-                                <p class="text-blue-800">${exchange.oneLiner}</p>
-                            </div>
-
-                            <!-- 关键指标卡片 -->
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                                    <div class="text-sm text-gray-500 mb-1">24小时成交量</div>
-                                    <div class="text-2xl font-bold text-gray-900">${exchange.volume24h}</div>
-                                </div>
-                                <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                                    <div class="text-sm text-gray-500 mb-1">流动性评分</div>
-                                    <div class="text-2xl font-bold text-gray-900">${exchange.liquidityScore}</div>
-                                </div>
-                                <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                                    <div class="text-sm text-gray-500 mb-1">交易所类型</div>
-                                    <div class="text-2xl font-bold text-gray-900">CEX</div>
-                                </div>
-                            </div>
-
-                            <!-- Strengths -->
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900 mb-3">优势</h3>
-                                <ul class="space-y-2">
-                                    ${exchange.strengths.map(strength => `
-                                        <li class="flex items-start">
-                                            <span class="text-green-500 mr-2">✓</span>
-                                            <span class="text-gray-700">${strength}</span>
-                                        </li>
-                                    `).join('')}
-                                </ul>
-                            </div>
-
-                            <!-- Concerns -->
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900 mb-3">关注点</h3>
-                                <ul class="space-y-2">
-                                    ${exchange.concerns.map(concern => `
-                                        <li class="flex items-start">
-                                            <span class="text-orange-500 mr-2">⚠</span>
-                                            <span class="text-gray-700">${concern}</span>
-                                        </li>
-                                    `).join('')}
-                                </ul>
-                            </div>
-                        </div>
+                    <div id="tabContent" class="p-8">
+                        ${generateOverviewTab(exchange)}
                     </div>
                 </div>
             `;
