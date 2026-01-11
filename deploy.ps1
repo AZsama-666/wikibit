@@ -5,7 +5,7 @@ param(
     [string]$GitHubToken = "",
     [string]$Owner = "AZsama-666",
     [string]$Repo = "wikibit",
-    [string]$Domain = "www.up9.one"
+    [string]$Domain = "www.up9.life"
 )
 
 Write-Host "=== GitHub Pages 自动部署脚本 ===" -ForegroundColor Cyan

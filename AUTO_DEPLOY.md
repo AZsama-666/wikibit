@@ -66,7 +66,7 @@ TTL：3600
 ### 步骤3：添加自定义域名（1分钟）
 
 1. 再次访问：https://github.com/AZsama-666/wikibit/settings/pages
-2. 在 "Custom domain" 输入：`www.up9.one`
+2. 在 "Custom domain" 输入：`www.up9.life`
 3. 点击 "Save"
 
 ## 方案3：使用其他平台（完全自动化）

@@ -1,4 +1,4 @@
-# 域名配置指南 - www.up9.one
+# 域名配置指南 - www.up9.life
 
 ## 当前状态
 
@@ -20,9 +20,9 @@
 
 2. **默认访问地址**
    - GitHub Pages会提供一个地址：`https://azsama-666.github.io/wikibit/`
-   - 或者如果设置了自定义域名：`https://www.up9.one`
+   - 或者如果设置了自定义域名：`https://www.up9.life`
 
-3. **配置自定义域名 www.up9.one**
+3. **配置自定义域名 www.up9.life**
    - 在仓库根目录创建 `CNAME` 文件（已创建）
    - 在域名DNS提供商（如Cloudflare, Namecheap等）添加DNS记录：
      - 类型：CNAME
@@ -69,7 +69,7 @@
 4. **配置域名**
    - 访问：https://vercel.com/dashboard
    - 选择项目 → Settings → Domains
-   - 添加域名：`www.up9.one`
+   - 添加域名：`www.up9.life`
    - 按照提示配置DNS记录（CNAME到cname.vercel-dns.com）
 
 ### 方案3：Netlify部署
@@ -87,12 +87,12 @@
 
 3. **配置域名**
    - Site settings → Domain management
-   - Add custom domain: `www.up9.one`
+   - Add custom domain: `www.up9.life`
    - 按照提示配置DNS记录
 
 ## DNS配置详细说明
 
-### 对于 www.up9.one
+### 对于 www.up9.life
 
 如果使用GitHub Pages：
 
@@ -141,11 +141,11 @@ TTL：3600
 
 2. **测试访问**
    - 访问：https://azsama-666.github.io/wikibit/
-   - 或：https://www.up9.one（配置DNS后）
+   - 或：https://www.up9.life（配置DNS后）
 
 3. **检查DNS解析**
    - 使用：https://dnschecker.org
-   - 输入：www.up9.one
+   - 输入：www.up9.life
    - 查看是否解析到正确的IP
 
 ## 注意事项
@@ -174,4 +174,4 @@ TTL：3600
 4. 等待部署完成（1-2分钟）
 5. 访问提供的GitHub Pages地址测试
 6. 配置DNS记录指向GitHub Pages
-7. 等待DNS生效后访问 www.up9.one
+7. 等待DNS生效后访问 www.up9.life

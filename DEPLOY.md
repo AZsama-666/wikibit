@@ -1,8 +1,8 @@
 # 部署指南 - Wiki Risk Portal
 
-## 部署到 www.up9.one
+## 部署到 www.up9.life
 
-由于 www.up9.one 域名上已有其他项目，有以下几种部署方案：
+由于 www.up9.life 是新域名，有以下几种部署方案：
 
 ### 方案1：使用Vercel部署（推荐）
 
@@ -34,11 +34,11 @@ Vercel 是 Next.js 官方推荐的部署平台，配置简单且性能优秀。
    - 访问 https://vercel.com/dashboard
    - 选择你的项目
    - 进入 Settings → Domains
-   - 添加域名：`www.up9.one` 或 `wiki.up9.one`（如果使用子域名）
+   - 添加域名：`www.up9.life` 或 `wiki.up9.one`（如果使用子域名）
    - 按照提示配置DNS记录
 
 #### DNS配置：
-如果使用 `www.up9.one` 作为主域名，需要在域名DNS设置中添加：
+如果使用 `www.up9.life` 作为主域名，需要在域名DNS设置中添加：
 - 类型：CNAME
 - 名称：www
 - 值：cname.vercel-dns.com
@@ -50,7 +50,7 @@ Vercel 是 Next.js 官方推荐的部署平台，配置简单且性能优秀。
 
 ### 方案2：使用子路径部署
 
-如果 www.up9.one 上已有其他项目，可以使用子路径（如 `/wiki`）部署。
+如果 www.up9.life 上已有其他项目，可以使用子路径（如 `/wiki`）部署。
 
 需要修改 `next.config.js`：
 
@@ -65,7 +65,7 @@ const nextConfig = {
 module.exports = nextConfig
 ```
 
-然后部署到 Vercel，访问地址将是：`www.up9.one/wiki`
+然后部署到 Vercel，访问地址将是：`www.up9.life/wiki`
 
 ### 方案3：使用其他部署平台
 
@@ -101,9 +101,9 @@ vercel --prod
 
 2. **构建优化**：项目已经优化，构建成功，可以直接部署
 
-3. **域名冲突**：如果 www.up9.one 已被其他项目使用，建议：
+3. **域名冲突**：如果 www.up9.life 已被其他项目使用，建议：
    - 使用子域名（wiki.up9.one）
-   - 或使用子路径（www.up9.one/wiki）
+   - 或使用子路径（www.up9.life/wiki）
    - 或联系我讨论替换现有项目的方案
 
 ## 当前项目状态

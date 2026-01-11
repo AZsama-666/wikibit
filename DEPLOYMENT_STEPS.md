@@ -1,4 +1,4 @@
-# 部署步骤 - www.up9.one
+# 部署步骤 - www.up9.life
 
 ## ✅ 已完成
 
@@ -51,7 +51,7 @@ TTL：3600
 
 1. 访问：https://github.com/AZsama-666/wikibit/settings/pages
 2. 在 "Custom domain" 部分：
-   - 输入：`www.up9.one`
+   - 输入：`www.up9.life`
    - 点击 "Save"
 3. GitHub会自动验证DNS配置
 
@@ -59,12 +59,12 @@ TTL：3600
 
 - DNS更改通常需要几分钟到几小时生效
 - 可以使用 https://dnschecker.org 检查DNS传播状态
-- 输入 `www.up9.one` 查看是否解析到GitHub Pages的IP
+- 输入 `www.up9.life` 查看是否解析到GitHub Pages的IP
 
 ### 步骤6：验证访问
 
 DNS生效后：
-- 访问：https://www.up9.one
+- 访问：https://www.up9.life
 - 确认网站正常显示
 - GitHub会自动提供SSL证书（HTTPS）
 
